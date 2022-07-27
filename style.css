@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+.homeScreen {
+    background-color: #FFFFFF;
+    width: 375px;
+    height: 720px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.soonHomeScreen {
+    width: 130px;
+    height: 92px;
+    margin-top: 72px;
+}
+.homeScreen input {
+    width: 261px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 94px;
+    border-radius: 4px;
+}
+.homeScreen input::placeholder {
+    color: #AEAEAE;
+    font-size: 18px;
+    font-weight: 400;
+}
+.login {
+    width: 109px;
+    height: 45px;
+    background-color: #E7E7E7;
+    color: #696969;
+    font-size: 18px;
+    margin-top: 15px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header {
+    background-color: #FFFFFF;
+    width: 375px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+}
+.soon {
+    width: 75px;
+    height: 53px;
+    margin-left: 22px;
+}
+.iconContacts {
+    font-size: 48px;
+    margin-left: 213.41px;
+}
+.container {
+    background-color: #F3F3F3;
+    width: 375px;
+    height: 562px;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.message {
+    width: 375px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.message.status {
+    background-color: #DCDCDC;
+}
+.message.reserved {
+    background-color: #FFDEDE;
+}
+.message.normal {
+    background-color: #FFFFFF;
+}
+.hour {
+    color: #AAAAAA;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.person {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+footer {
+    background-color: #FFFFFF;
+    width: 375px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+}
+footer input {
+    width: 145px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    margin-left: 17px;
+}
+footer input::placeholder {
+    font-size: 18px;
+    font-style: italic;
+}
+.submit {
+    font-size: 28px;
+    margin-left: 169px;
+}
+.hidden {
+    display: none;
+}
