@@ -11,26 +11,26 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="homeScreen hidden">
+        <div class="homeScreen">
             <img class="soonHomeScreen" src="images/logo 2.png" />
-            <input placeholder="Digite seu nome" />
-            <div class="login">Entrar</div>
+            <input type="text" class="username" placeholder="Digite seu nome" required />
+            <div class="login" disabled onclick="login()">Entrar</div>
         </div>
-        <header>
-            <img class="soon" src="images/logo 1.png" />
-            <div class="iconContacts">
-                <ion-icon class="contatos" name="people" ></ion-icon>
-            </div>
-        </header>
-        <div class="container">
+        <div class="mainScreen hidden">
+            <header>
+                <img class="soon" src="images/logo 1.png" />
+                <div class="iconContacts">
+                    <ion-icon class="contatos" name="people" ></ion-icon>
+                </div>
+            </header>
+            <div class="container"></div>
+            <footer>
+                <input placeholder="Escreva aqui..." />
+                <div class="submit">
+                    <ion-icon class="direct" name="paper-plane-outline"></ion-icon>
+                </div>
+            </footer>
         </div>
-        </div>
-        <footer>
-            <input placeholder="Escreva aqui..." />
-            <div class="submit">
-                <ion-icon class="direct" name="paper-plane-outline"></ion-icon>
-            </div>
-        </footer>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="scripts.js"></script>  
