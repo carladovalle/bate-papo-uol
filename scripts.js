@@ -12,14 +12,11 @@ function login() {
     const newUser = document.querySelector(".username").value;
     const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", {name: newUser});
     promise.then(loadMessages);
-    promise.catch(handleErrorLogin);
+    promise.catch(resetPage);
 }
 
-function handleErrorLogin(error) {
-    console.log(error.response);
-    if (error.response.status === 400) {
-        alert("Esse usuario já esta cadastrado.")
-    }
+function resetPage() {
+    window.location.reload();
 }
 
 function loadMessages() {
