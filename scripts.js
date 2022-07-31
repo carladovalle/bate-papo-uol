@@ -1,18 +1,21 @@
 let messages = [];
+let newUser;
+
+function startChat() {
+    loadMessages();
+    setInterval(loadMessages,3000);
+}
 
 function login() {
     document.querySelector(".homeScreen").classList.add("hidden");
     document.querySelector(".mainScreen").classList.remove("hidden");
-    const name = document.querySelector(".username").value;
-    const newUser = {name: name};
-    const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", newUser);
+    const newUser = document.querySelector(".username").value;
+    const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", {name: newUser});
     promise.then(loadMessages);
-    promise.catch(handleError);
+    promise.catch(handleErrorLogin);
 }
 
-loadMessages();
-
-function handleError(error) {
+function handleErrorLogin(error) {
     console.log(error.response);
     if (error.response.status === 400) {
         alert("Esse usuario já esta cadastrado.")
@@ -57,3 +60,5 @@ function renderMessages() {
         }
     }
 }
+
+startChat();
