@@ -38,27 +38,33 @@ function renderMessages() {
     for (let i = 0; i < messages.length; i++) {
         if (messages[i].type === "status") {
             ulMessages.innerHTML += `
-                <div class="message status">
+                <li class="message status">
                     <div class="hour">(${messages[i].time})</div>
                     <div class="messageContent">${messages[i].from} ${messages[i].text}</div>
-                </div>   
+                </li>   
                 `
         } else if (messages[i].type === "message") {
             ulMessages.innerHTML += `
-            <div class="message normal">
+            <li class="message normal">
                 <div class="hour">(${messages[i].time})</div>
                 <div class="messageContent">${messages[i].from} para ${messages[i].to}: ${messages[i].text}</div>
-            </div>
+            </li>
             `
         } else {
             ulMessages.innerHTML += `
-            <div class="message reserved">
+            <li class="message reserved">
                 <div class="hour">(${messages[i].time})</div>
-                <div class="messageContent">${messages[i].from} para ${messages[i].to}: ${messages[i].text}</div>
-            </div>
+                <div class="messageContent">${messages[i].from} reservadamente para ${messages[i].to}: ${messages[i].text}</div>
+            </li>
             `
         }
     }
+    scrollToTheEnd();
+}
+
+function scrollToTheEnd() {
+    const lastMessageSent = document.querySelector(".container li:last-child");
+    lastMessageSent.scrollIntoView();
 }
 
 startChat();
