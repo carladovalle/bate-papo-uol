@@ -2,17 +2,17 @@ let messages = [];
 let newUser;
 
 function startChat() {
-    loadMessages();
     setInterval(loadMessages,3000);
 }
 
 function login() {
-    document.querySelector(".homeScreen").classList.add("hidden");
-    document.querySelector(".mainScreen").classList.remove("hidden");
-    const newUser = document.querySelector(".username").value;
+    //document.querySelector(".homeScreen").classList.remove("hidden");
+    //document.querySelector(".mainScreen").classList.add("hidden");
+    //let newUser = document.querySelector(".username").value;
+    newUser = prompt("Qual o seu nome?");
     const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", {name: newUser});
-    promise.then(loadMessages);
-    promise.catch(resetPage);
+    promise.then(startChat);
+    promise.catch(loadMessages);
 }
 
 function resetPage() {
@@ -64,4 +64,26 @@ function scrollToTheEnd() {
     lastMessageSent.scrollIntoView();
 }
 
-startChat();
+function sendMessage () {
+    let textMessage = document.querySelector(".messageSent").value;
+    let newMessage = {
+        from: newUser,
+        to: "Todos",
+        text: textMessage,
+        type: "message"
+    };
+    const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", newMessage);
+    if (textMessage) {
+        promise.then(messageSentSuccess);
+        promise.catch(resetPage);
+    } else {
+        alert("Escreva a mensagem")
+    }
+}
+
+function messageSentSuccess() {
+    document.querySelector(".messageSent").value = " ";
+    loadMessages();
+}
+
+login();

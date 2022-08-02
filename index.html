@@ -11,12 +11,12 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="homeScreen">
+        <div class="homeScreen hidden">
             <img class="soonHomeScreen" src="images/logo 2.png" />
             <input type="text" class="username" placeholder="Digite seu nome" required />
-            <div class="login" disabled onclick="login()">Entrar</div>
+            <div class="login" onclick="login()">Entrar</div>
         </div>
-        <div class="mainScreen hidden">
+        <div class="mainScreen">
             <header>
                 <img class="soon" src="images/logo 1.png" />
                 <div class="iconContacts">
@@ -27,8 +27,8 @@
                 <ul class="container"></ul>
             </main>
             <footer>
-                <input placeholder="Escreva aqui..." />
-                <div class="submit">
+                <input class="messageSent" placeholder="Escreva aqui..." />
+                <div class="submit" onclick="sendMessage()">
                     <ion-icon class="direct" name="paper-plane-outline"></ion-icon>
                 </div>
             </footer>
