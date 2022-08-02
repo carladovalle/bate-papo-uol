@@ -3,6 +3,11 @@ let newUser;
 
 function startChat() {
     setInterval(loadMessages,3000);
+    setInterval(keepActive,5000);
+}
+
+function keepActive() {
+    axios.post("https://mock-api.driven.com.br/api/v6/uol/status", {name: newUser});
 }
 
 function login() {
